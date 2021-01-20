@@ -79,3 +79,35 @@ section{
     font-size: 17px;
     padding: 13px 28px;
 }
+
+@media screen and (max-width:768px) {
+    section{
+        display: block;
+        width: 85%;
+        height: 450px;
+        margin-top: 80px;
+        margin-left: 25px;
+        
+        
+
+    }
+    #todo-input{
+        margin-top: 30px;
+        font-size: 12px;
+        padding: 10px 13px;
+    }
+    #add-item{
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+    ul li{
+        width: 120px;
+        padding: 6px 30px;
+        
+        
+}
+    ul li:hover span{
+    margin-right: 0px;
+}
+
+}
