@@ -1,0 +1,81 @@
+*{
+    
+    overflow: hidden;
+}
+body{
+    background: linear-gradient(110deg, #00c9ff 30%, #92fe9d 70%);
+}
+#todo-input{
+    font-size: 16px;
+    padding: 15px 40px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 5px;
+    margin-right: 15px;
+    color: white;
+    background: rgb(47, 129, 143);
+}
+::placeholder{
+    color:rgb(72, 243, 220);
+    
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+}
+ul li{
+    width: 250px;
+    padding: 10px 50px;
+    background-color: rgb(189, 15, 131);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    justify-content: center;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    
+   
+}
+ul li span{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin-right:-20px;
+    text-align: center;
+    background: rgb(254, 255, 255);
+    color: red;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 0 5px 5px 0;
+    transition: 0.3s ease;
+}
+ul li:hover span{
+    margin-right: 0px;
+}
+
+
+section{
+    
+    /*background: linear-gradient(110deg, #8e0e00 60%, #1f1c18 60%);*/
+    background-color:rgb(48, 31, 46) ;
+    background-size: cover;
+    box-shadow: 1px 2px 60px rgba(0,0,0,4);
+    display: block;
+    width: 500px;
+    height: 600px;
+    margin-top: 100px;
+    margin-left: 500px;
+    overflow: hidden;
+}
+
+#add-item{
+    background: #f4ad15;
+    font-family: poppins;
+    font-size: 17px;
+    padding: 13px 28px;
+}
