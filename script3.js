@@ -1,84 +1,52 @@
-console.log("hello")
-var userInput=document.getElementById('todo-input');
-var list=document.getElementById('todo-list');
-var btn=document.getElementById('add-item');
+const todoInput = document.getElementById("todo-input");
+const addItemBtn = document.getElementById("add-item");
+const todoList = document.getElementById("todo-list");
 
+// Event Listeners
+addItemBtn.addEventListener("click", addTodo);
+todoList.addEventListener("click", removeTodo);
 
-
-var currentValue="";
-userInput.addEventListener('input',function(e){
-    
-        currentValue=e.target.value;
-  
-})
-
-
-function createNewNode(){
-    var newListItem=document.createElement('li');
-  
-    var textElement=document.createTextNode(currentValue);
-    newListItem.appendChild(textElement);
-    newListItem.id='item' +(list.childElementCount+1);
-    var mySpan=document.createElement('span');
-    mySpan.innerText= "x";
-    newListItem.appendChild(mySpan);
-    
-   
-  // console.log(mySpan)
+// functions
+function createNode(){
+    const newTodo = document.createElement("li");
+    newTodo.innerHTML = '<span class="update-btn">&#9444;</span>' + todoInput.value + ' <span class="remove-btn">x</span>';
+    return newTodo;
 }
-   
+// function to add todo item
+function addTodo(event) {
+  event.preventDefault(); //to prevent reload
+  if (todoInput.value === "") {
+    alert("WARNING>>You must enter something");
+  } else {
+    const newTodo=createNode();
+    todoList.appendChild(newTodo);
+    todoInput.value = "";
+  }
+}
 
+// function to remove todo item
+function removeTodo(event) {
+  const clickedItem = event.target; //to get clicked item
+  //   checking whether clicked thing has remove-btn class
+  if (clickedItem.classList.contains("remove-btn")) {
+    const todoItem = clickedItem.parentElement;
+    todoItem.remove();
+  }
+}
 
-
-
-function addListItem(){
-    if(userInput.value !==""){
-    
-    var newListItem=document.createElement('li');
-    
-    var textElement=document.createTextNode(currentValue);
-    newListItem.appendChild(textElement);
-    newListItem.id='item' +(list.childElementCount+1);
-    console.log(list.childElementCount)
-    
-    list.appendChild(newListItem);
-    
-    var mySpan=document.createElement('span');
-    mySpan.innerText= "x";
-    newListItem.appendChild(mySpan);
-    
-   
-    console.log(newListItem)
-    userInput.value="";
-    currentValue="";
+//function to update todo item
+todoList.addEventListener("click",function(){
+  const clickedItem = event.target;
+  if(clickedItem.classList.contains("update-btn")) {
+    const todoItem = clickedItem.parentElement;
+    const nodeItem= createNode();
+    if(todoInput.value!==""){
+    todoList.replaceChild(nodeItem, todoItem);
+    todoInput.value="";
     }
     else{
-        alert("invalid input")
+      alert("UPDATE: Please Type in inputBox that you want and then click U button to update the item.")
     }
-    var btn2=document.querySelectorAll('span');
-    for(let i=0;i<(list.childElementCount+1);i++){
-    
-        btn2[i].addEventListener('click',function(){
-            //list.splice(i,1)
-            btn2[i].parentElement.style.display="none";
-           
-        });
-    }
-   
-
-   
-}
-
-
-
-
-userInput.addEventListener('keyup',function(e){
-    if(e.keyCode===13){
-        addListItem()
-    }
-    
-});
-
-
-btn.addEventListener('click',createNewNode);
-btn.addEventListener('click',addListItem);
+  }
+})
+ 
