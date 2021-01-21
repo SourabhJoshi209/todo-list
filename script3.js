@@ -48,5 +48,5 @@ todoList.addEventListener("click",function(){
       alert("UPDATE: Please Type in inputBox that you want and then click U button to update the item.")
     }
   }
-})
+});
  
