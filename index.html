@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style3.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style3.css" />
     <title>ToDO List App</title>
-</head>
-<body>
-    <header>
-        <section>
-          
-                <input id="todo-input" type="text" placeholder="Enter your task..">
+    </head>
+    <body>
+        <header>
+            <section>
+                <form>
+                  <input id="todo-input" type="text" placeholder="Enter your task.." />
         
-         
-                <button id="add-item" > <b>Add</b> </button>
-        
-           
-            <ul id="todo-list">
-                <li>item 1 <span>x</span></li>
-                <li>item 2 <span>x</span></li>
-               
-            </ul>
-        </section>
-    </header>
-    
-    <script src="script3.js"></script>
-</body>
+                  <button id="add-item"><b>Add</b></button>
+                </form>
+                
+                <ul id="todo-list">
+                    <li><span class="update-btn">&#9444;</span>Item 1<span class="remove-btn">x</span></li>
+                    <li><span class="update-btn">&#9444;</span>Item 2<span class="remove-btn">x</span></li>
+                </ul>
+            </section>
+        </header>  
+        <script src="script.js"></script>
+    </body>
 </html>
